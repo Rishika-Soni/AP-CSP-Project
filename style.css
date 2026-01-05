@@ -1,11 +1,3 @@
-/* FULL PAGE CLICKABLE LINK */
-.full-page-link {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  cursor: pointer;
-}
-
 
 :root {
   --bg: #fffafc;          /* soft off-white pink */
@@ -227,6 +219,7 @@ code {
     padding: 25px;
   }
 }
+
 
 
 
