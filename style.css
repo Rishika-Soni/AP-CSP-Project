@@ -1,0 +1,232 @@
+/* FULL PAGE CLICKABLE LINK */
+.full-page-link {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+
+:root {
+  --bg: #fffafc;          /* soft off-white pink */
+  --text: #1a1a1a;        /* soft black (AAA) */
+  --card: #f1c4d9;        /* blush pink (AAA with text) */
+  --accent: #7a0030;      /* deep rose (AAA with white) */
+  --border: #5c0024;
+}
+
+body.dark {
+  --bg: #0b0b0d;          /* near-black */
+  --text: #ffffff;       /* white (AAA) */
+  --card: #161618;       /* charcoal */
+  --accent: #ffb7d9;     /* pastel pink (AAA with black) */
+  --border: #ff8fc4;
+}
+
+/* ---------- BASE RESET ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ---------- FORCE AAA TEXT CONTRAST ---------- */
+body,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  border-bottom: 2px solid var(--border);
+}
+
+header h2 {
+  margin: 0;
+}
+
+/* ---------- DARK MODE TOGGLE ---------- */
+.toggle {
+  cursor: pointer;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 0 18px rgba(122, 0, 48, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(122, 0, 48, 0.9);
+}
+
+/* Dark mode toggle contrast */
+body.dark .toggle {
+  color: #000000;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+.container {
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ---------- LEFT PANEL ---------- */
+.left {
+  max-width: 420px;
+  text-align: center;
+}
+
+.big-photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 3px solid var(--border);
+  box-shadow: 0 0 30px rgba(122, 0, 48, 0.35);
+}
+
+.about-text {
+  margin-top: 18px;
+  line-height: 1.6;
+}
+
+/* ---------- RIGHT CARDS ---------- */
+.right {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 600px;
+}
+
+.subpage-box {
+  background: var(--card);
+  border-radius: 26px;
+  padding: 26px;
+  text-align: center;
+  border: 2px solid var(--border);
+  box-shadow: 0 15px 35px rgba(122, 0, 48, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subpage-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(122, 0, 48, 0.45);
+}
+
+.subpage-box a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ---------- PAGE CARD (SUBPAGES) ---------- */
+.page {
+  max-width: 820px;
+  margin: 50px auto;
+  padding: 40px;
+  background: var(--card);
+  border-radius: 30px;
+  border: 2px solid var(--border);
+  box-shadow: 0 20px 45px rgba(122, 0, 48, 0.3);
+}
+
+/* ---------- BUTTONS ---------- */
+a.button {
+  display: inline-block;
+  margin: 20px 0;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(122, 0, 48, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(122, 0, 48, 0.9);
+}
+
+/* Dark mode button contrast */
+body.dark a.button {
+  color: #000000;
+}
+
+/* ---------- LISTS ---------- */
+ul,
+ol {
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+/* ---------- CODE / PRE ---------- */
+pre,
+code {
+  background: #000000;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  display: block;
+  overflow-x: auto;
+}
+
+/* ---------- SCREENSHOTS ---------- */
+.screenshots img {
+  width: 200px;
+  border-radius: 16px;
+  margin: 10px;
+  border: 2px solid var(--border);
+  box-shadow: 0 0 20px rgba(122, 0, 48, 0.4);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 25px;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  .big-photo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .page {
+    margin: 25px;
+    padding: 25px;
+  }
+}
+
+
+
